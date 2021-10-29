@@ -28,6 +28,7 @@ class IleIweApplicationTests {
 		try {
 			Connection connection = dataSource.getConnection();
 			assertThat(connection).isNotNull();
+			assertThat(connection.getCatalog()).isEqualTo("ileiwedb");
 			log.info("Database -> {}", connection.getCatalog());
 		}catch(SQLException exception){
 			log.info("An exception occurred -> {}", exception.getMessage());
